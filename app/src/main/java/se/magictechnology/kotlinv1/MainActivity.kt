@@ -7,7 +7,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-
+    var antalklick = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -17,7 +17,10 @@ class MainActivity : AppCompatActivity() {
         topptexten.text = "Appen startat"
 
         toppknappen.setOnClickListener {
-            topptexten.text = "Tryckt på knappen"
+
+            antalklick = antalklick + 1
+
+            topptexten.text = "Klick: " + antalklick.toString()
         }
 
 
@@ -25,7 +28,8 @@ class MainActivity : AppCompatActivity() {
 
     fun tryckanedreknapp(view : View)
     {
-        topptexten.text = "Tryckt andra knappen"
+        antalklick = 0
+        topptexten.text = "Klick: " + antalklick.toString()
     }
 
 }
